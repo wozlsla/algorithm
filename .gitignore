@@ -1,0 +1,11 @@
+# Programmers
+programmers/programmers/
+
+# Sparta
+sparta/sparta/
+
+# MacOS
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store

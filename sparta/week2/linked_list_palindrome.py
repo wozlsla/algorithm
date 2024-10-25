@@ -64,7 +64,7 @@ def is_palindrome_runner(ln):
     return not prev
 
 
-from linked_list import LinkedList
+from structures import LinkedList
 
 ln = LinkedList()
 

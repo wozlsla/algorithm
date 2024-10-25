@@ -13,17 +13,21 @@ class LinkedList:
             self.head = ListNode(val, None)
             return
 
+        # head 를 node 변수에 할당 : 리스트의 시작점에서 탐색을 시작하겠다
         node = self.head
+
+        # next 필드가 None인 경우 그 노드가 끝이라는 뜻
         while node.next:
             node = node.next
 
+        # 마지막 노드의 next 필드에 새 node를 연결 : 새로운 노드를 리스트의 마지막에 추가
         node.next = ListNode(val, None)
 
 
-ln = LinkedList()
+# ln = LinkedList()
 
-ln.append(3)
-ln.append(5)
-ln.append(7)
+# ln.append(3)
+# ln.append(5)
+# ln.append(7)
 
-print(ln)
+# print(ln)

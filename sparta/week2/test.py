@@ -1,5 +1,5 @@
-from structures import LinkedList
-from palindrome import is_palindrome
+from linked_list import LinkedList
+from linked_list_palindrome import is_palindrome
 
 
 l1 = LinkedList()

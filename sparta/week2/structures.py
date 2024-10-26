@@ -41,15 +41,18 @@ class Stack:
         self.top = None
 
     def push(self, val):
+        # 노드 객체 생성, top 노드를 next로 연결
         node = Node(val, self.top)
+        # top을 새로 생성한 노드로 업데이트. 스택의 맨 위를 가리키게 함
         self.top = node
-        # self.top = Node(val, self.top)
 
     def pop(self):
         if not self.top:
             return None
 
         node = self.top
+        # 이전 노드와의 연결을 끊음, top을 다음 노드로 업데이트
+        # Python) 사용되지 않으면 메모리에서 자동으로 정리 됨 - Garbage Collection
         self.top = node.next
 
         return node.val

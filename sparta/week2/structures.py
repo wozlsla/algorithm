@@ -89,3 +89,59 @@ class Queue:
 
     def is_empty(self):
         return self.front is None
+
+
+""" Hash Table (Chaining) """
+
+
+class HashNode:
+    def __init__(self, key, val, next):
+        self.key = key
+        self.val = val
+        self.next = next
+
+
+class HashTable:
+    def __init__(self):
+        self.size = 10
+        self.table = [None] * self.size
+
+    def _hash_function(self, key):
+        return key % self.size
+
+    def put(self, key, val):
+        idx = self._hash_function(key)
+
+        if self.table[idx] is None:
+            self.table[idx] = HashNode(key, val, None)
+        else:
+            node = self.table[idx]
+            while node.next is not None:
+                node = node.next
+            node.next = HashNode(key, val, None)
+
+    def get(self, key):
+        idx = self._hash_function(key)
+        node = self.table[idx]
+
+        while node is not None:
+            if node.key == key:
+                return node.val
+            node = node.next
+
+        return -1
+
+    def remove(self, key):
+        idx = self._hash_function(key)
+        node = self.table[idx]
+        prev = None
+
+        while node is not None:
+            if node.key == key:
+                if prev is not None:
+                    prev.next = node.next
+                else:
+                    self.table[idx] = node.next
+
+            prev = node
+            node = node.next

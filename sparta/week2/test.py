@@ -1,4 +1,4 @@
-from structures import LinkedList, Stack, Queue
+from structures import LinkedList, Stack, Queue, HashTable
 from linked_list_palindrome import is_palindrome
 from stack_valid_parentheses import test_problem_stack
 from queue_order import test_problem_queue
@@ -14,7 +14,6 @@ for num in [1, 2, 2, 1]:
 l2 = LinkedList()
 for num in [1, 2]:
     l2.append(num)
-
 
 assert is_palindrome(l1)
 assert not is_palindrome(l2)
@@ -42,7 +41,6 @@ def test_stack():
 
 
 test_stack()
-
 
 assert test_problem_stack("()")
 assert test_problem_stack("()[]{}")
@@ -78,10 +76,36 @@ def test_queue():
 
 test_queue()
 
-
 assert test_problem_queue(2) == 2
 assert test_problem_queue(3) == 2
 assert test_problem_queue(4) == 4
 assert test_problem_queue(5) == 2
 assert test_problem_queue(6) == 4
 assert test_problem_queue(7) == 6
+
+
+""" Hash Table (Chaining) """
+
+
+ht = HashTable()
+
+ht.put(1, 1)
+ht.put(2, 2)
+assert ht.get(1) == 1
+assert ht.get(2) == 2
+assert ht.get(3) == -1
+
+ht.put(12, 1)
+ht.put(22, 2)
+ht.put(32, 3)
+assert ht.get(12) == 1
+assert ht.get(22) == 2
+assert ht.get(32) == 3
+
+ht.remove(12)
+assert ht.get(2) == 2
+assert ht.get(12) == -1
+assert ht.get(22) == 2
+assert ht.get(32) == 3
+
+ht.get(2)

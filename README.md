@@ -1,4 +1,14 @@
+# Python
+- 객체 참조
+- 다중 할당
+- 객체 재사용 (Interning)
+
+
+</br>
+</br>
+
 # 자료구조
+구현 : [structures.py](https://github.com/wozlsla/algorithm/blob/main/sparta/week2/structures.py)
   
 ### Linked List
 

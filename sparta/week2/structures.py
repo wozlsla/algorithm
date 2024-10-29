@@ -145,3 +145,59 @@ class HashTable:
 
             prev = node
             node = node.next
+
+
+""" Max Heap """
+
+
+class BinaryMaxHeap:
+    def __init__(self):
+        self.item = [None]
+
+    def insert(self, val):
+        self.items.append(val)
+
+        now = len(self.items) - 1  # idx
+        parent = now // 2
+
+        while parent > 0:
+            if self.items[now] > self.items[parent]:
+                self.items[now], self.items[parent] = self.items[parent], self.items[now]
+
+            now = parent
+            parent = now // 2
+
+    def extract(self):
+        if len(self.items) < 2:  # [None, ...]
+            return None
+
+        # self.items[1]의 값을 참조
+        root = self.items[1]  # max(head) -> return
+
+        # 각각의 객체로 '참조를 바꾸는' 작업
+        self.items[1], self.items[-1] = self.items[-1], self.items[1]
+        self.items.pop()  # 제거
+
+        self._percolate_down(1)  # 정렬
+
+        return root
+
+    def _percolate_down(self, now):
+        largest = now
+        left = 2 * now
+        right = 2 * now + 1
+
+        """
+        1. 왼쪽 자식 노드가 힙의 길이보다 작고, 
+           현재 노드의 값보다 크다면, largest를 왼쪽 자식 노드의 인덱스로 업데이트
+        2. 오른쪽 자식 노드가 존재하고, 
+           현재 가장 큰 값(largest)보다 더 큰 값을 가지고 있다면, largest를 오른쪽 자식 노드의 인덱스로 변경
+        """
+        if left < len(self.item) and self.items[left] > self.items[largest]:
+            largest = left
+        if right < len(self.item) and self.items[right] > self.items[largest]:
+            largest = right
+
+        if largest != now:
+            self.items[largest], self.items[now] = self.items[now], self.items[largest]
+            self._percolate_down(largest)

@@ -1,3 +1,6 @@
+""" DFS """
+
+
 def dfs_recursive(graph, node, visited):
     # 방문처리
     visited.append(node)
@@ -23,5 +26,26 @@ def dfs_stack(graph, st):
         for adj in graph[node]:
             if adj not in visited:
                 stack.append(adj)
+
+    return visited
+
+
+""" BFS """
+
+
+from collections import deque
+
+
+def bfs_queue(graph, st):
+    visited = []  # 방문한 노드
+    deq = deque([st])  # 방문할 노드
+
+    while deq:
+        node = deq.popleft()  # 방문할 노드를 꺼내옴
+        visited.append(node)
+
+        for adj in graph[node]:  # 노드의 인접 순차 탐색
+            if adj not in visited:
+                deq.append(adj)
 
     return visited

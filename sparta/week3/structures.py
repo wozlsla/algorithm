@@ -49,3 +49,43 @@ def bfs_queue(graph, st):
                 deq.append(adj)
 
     return visited
+
+
+""" Binary Search
+1. 처음/끝을 잡는다
+2. 중간값을 찾는다
+3. 중간값과 타겟을 비교한다
+4. 작으면 왼쪽, 크면 오른쪽으로 업데이트한다
+(반복)
+ """
+
+
+def binary_search(nums, target):
+
+    def bs(st, ed):
+        if st > ed:
+            return -1
+
+        mid = (st + ed) // 2
+
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] > target:
+            return bs(st, mid - 1)
+        elif nums[mid] < target:
+            return bs(mid + 1, ed)
+
+    return bs(0, len(nums) - 1)
+
+
+"""
+target = 4
+
+[-1, 0, 3, 5, 9, 12]
+ 0      |         5 -> 5//2=2
+
+[5, 9, 12]
+ 3  |   5 -> 8/2=4
+
+[5] --> 같아짐 !!
+"""

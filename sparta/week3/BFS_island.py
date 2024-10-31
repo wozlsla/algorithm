@@ -38,3 +38,4 @@ def island_bfs(grid):
                         continue
 
                     deq.append((nx, ny))
+    return cnt

@@ -93,3 +93,10 @@ assert (
     )
     == 3
 )
+
+
+""" Binary Search """
+from structures import binary_search
+
+assert binary_search(nums=[-1, 0, 3, 5, 9, 12], target=9) == 4
+assert binary_search(nums=[-1, 0, 3, 5, 9, 12], target=2) == -1

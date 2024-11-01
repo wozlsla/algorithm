@@ -24,7 +24,7 @@ def solution(s):
 
 
 def solution(s):
-    answer = s
+    answer = s  # 불변성 문제로 입력받은걸 수정하지 않는걸 권장
     for key, value in nums.items():
         answer = answer.replace(key, value)
     return int(answer)
@@ -62,12 +62,47 @@ def solution(s):
             result += i
         else:
             tmp += i
-            if tmp in nums:
+            if tmp in nums:  #
                 result += str(nums.get(tmp))
                 # list의 경우 인덱스를 반환할 수도 있다 ["zero", "one", ...]
                 tmp = ""
 
     return result
+
+
+# if s[i:i+len(word)] == word:
+
+
+def solution(s):
+    answer = ""
+    dic = {
+        "zero": "0",
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "six": "6",
+        "seven": "7",
+        "eight": "8",
+        "nine": "9",
+    }
+
+    i = 0
+    while i < len(s):
+        if s[i].isdigit():  # 숫자인 경우 바로 추가
+            answer += s[i]
+            i += 1
+        else:  # 영단어를 숫자로 변환
+            for word, num in dic.items():
+                if (
+                    s[i : i + len(word)] == word
+                ):  # 영단어가 일치하면 # 이 부분 슬라이싱 구성
+                    answer += num
+                    i += len(word)
+                    break
+
+    return int(answer)  # 마지막에 한번더 Int 형으로 전환
 
 
 s = "one4seveneight"

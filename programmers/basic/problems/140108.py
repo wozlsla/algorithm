@@ -83,7 +83,7 @@ def solution(s):
 s = "aaabbacbcc"  # aaabbacb cc -> 2 ([aaaa][bbcb] cc)
 s = "aaabbacbcc"  # aaabbacbcc -> 1 (bbb ccc)
 print(solution(s))
-print(sol(s))
+# print(sol(s))
 
 
 """ Queue """

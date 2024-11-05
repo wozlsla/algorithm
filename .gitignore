@@ -1,8 +1,11 @@
+# coding test
+ctest/desc
+
 # Programmers
-programmers/programmers/
+programmers/desc/
 
 # Sparta
-sparta/sparta/
+sparta/desc/
 
 # MacOS
 .DS_Store

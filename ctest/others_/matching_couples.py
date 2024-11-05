@@ -24,3 +24,8 @@ print(match([5, 5, 4]))  # 출력: 200
 print(match([2, 2, 2]))  # 출력: 4
 print(match([10, 10, 6]))  # 출력: 86400
 print(match([15, 10, 6]))  # 출력: 327600
+
+
+"""
+https://github.com/gutty333/Hard-Programming-Challenges/blob/master/43_MatchingCouples.cpp
+"""

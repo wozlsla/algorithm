@@ -1,14 +1,13 @@
 # Python
 - 객체 참조
-- [다중 할당](github.com/wozlsla/algorithm/blob/5cfd6ef42b25da4ef0d89c013e091e68d925290f/sparta/week2/linked_list_palindrome.py#L44)
-- [객체 재사용 (Interning)](github.com/wozlsla/algorithm/blob/main/python/interning.py)
-
+- [다중 할당](https://github.com/wozlsla/algorithm/blob/5cfd6ef42b25da4ef0d89c013e091e68d925290f/sparta/week2/linked_list_palindrome.py#L44)
+- [객체 재사용 (Interning)](https://github.com/wozlsla/algorithm/blob/main/python/interning.py)
 
 </br>
 </br>
 
 # 자료구조
-구현 : [structures.py](github.com/wozlsla/algorithm/blob/main/sparta/week2/structures.py)
+구현 : [structures.py](https://github.com/wozlsla/algorithm/blob/main/sparta/week2/structures.py)
   
 ### Linked List
 

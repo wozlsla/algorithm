@@ -162,7 +162,10 @@ class BinaryMaxHeap:
 
         while parent > 0:
             if self.items[now] > self.items[parent]:
-                self.items[now], self.items[parent] = self.items[parent], self.items[now]
+                self.items[now], self.items[parent] = (
+                    self.items[parent],
+                    self.items[now],
+                )
 
             now = parent
             parent = now // 2
@@ -201,3 +204,7 @@ class BinaryMaxHeap:
         if largest != now:
             self.items[largest], self.items[now] = self.items[now], self.items[largest]
             self._percolate_down(largest)
+
+
+""" Min Heap """
+# https://github.com/wozlsla/algorithm/blob/4880008bd1473d4e466c094f7c1444e69a818755/ctest/baekjoon/1927.py

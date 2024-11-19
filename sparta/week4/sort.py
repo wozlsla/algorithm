@@ -27,6 +27,7 @@ def insertionsort(arr):
     return arr
 
 
+# sparta
 def quicksort(arr, st, end):
     """
     i: pivot보다 작은 요소들의 집합의 `경계`를 구하기 위함
@@ -49,3 +50,41 @@ def quicksort(arr, st, end):
     quicksort(arr, i + 2, end)
 
     return arr
+
+
+# https://youtu.be/9KBwdDEwal8?si=2vyMNjCcsV9VXUX0
+def quicksort2(arr, left, right):
+    if left < right:
+        pos = partition(arr, left, right)
+        quicksort(arr, left, pos - 1)
+        quicksort(arr, pos + 1, right)
+
+
+def partition(arr, left, right):
+    i = left
+    j = right
+    pivot = arr[right]
+
+    while i < j:
+
+        # i 이동 - left의 idx가 right의 idx보다 작고, left의 값이 pivot의 값보다 작다면
+        while i < right and arr[i] < pivot:
+            i += 1
+
+        # j 이동 - right의 idx가 left의 idx보다 크고, right의 값이 pivot보다 크거나 같으면
+        while j > left and arr[j] >= pivot:
+            j -= 1
+
+        if i < j:  # swap
+            arr[i], arr[j] = arr[j], arr[i]
+
+    # i가 멈춘 위치에서, pivot보다 큰 값이면 pivot의 위치와 스왑 -> pivot을 위치 결정
+    if arr[i] > pivot:
+        arr[i], arr[right] = arr[right], arr[i]
+
+    return i
+
+
+arr = [22, 11, 88, 66, 55, 77, 33, 44]
+quicksort2(arr, 0, len(arr) - 1)
+print(arr)

@@ -125,6 +125,11 @@ def mergesort(arr):
 
 
 def heapsort(arr):
+    import os, sys
+
+    # 디렉터리를 동적으로 추가 (협업 X)
+    sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
     from week2.structures import BinaryMinHeap
 
     res = []

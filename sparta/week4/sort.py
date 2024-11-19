@@ -86,5 +86,55 @@ def partition(arr, left, right):
 
 
 arr = [22, 11, 88, 66, 55, 77, 33, 44]
-quicksort2(arr, 0, len(arr) - 1)
-print(arr)
+arr = [4, 2, 8, 6, 1]
+# quicksort2(arr, 0, len(arr) - 1)
+# print(arr)
+
+
+def merge(arr1, arr2):
+    res = []
+    i = j = 0
+
+    while i < len(arr1) and j < len(arr2):
+        if arr1[i] < arr2[j]:
+            res.append(arr1[i])
+            i += 1
+        else:
+            res.append(arr2[j])
+            j += 1
+
+    # 남은 거 합침
+    for idx in range(i, len(arr1)):
+        res.append(arr1[idx])
+    for idx in range(j, len(arr2)):
+        res.append(arr2[idx])
+
+    return res
+
+
+def mergesort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    # 쪼갬
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
+
+    return merge(mergesort(left), mergesort(right))
+
+
+def heapsort(arr):
+    from week2.structures import BinaryMinHeap
+
+    res = []
+    heap = BinaryMinHeap()
+
+    for i in arr:
+        heap.insert(i)
+
+    for _ in range(len(arr)):
+        res.append(heap.extract())
+
+    return res
+    # return [heap.extract() for _ in range(len(arr))]

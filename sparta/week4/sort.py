@@ -15,3 +15,13 @@ def selectionsort(arr):
         if min != i:
             arr[min], arr[i] = arr[i], arr[min]
     return arr
+
+
+def insertionsort(arr):
+    for i in range(len(arr) - 1):
+        for j in reversed(range(1, i + 2)):  # 뒤에서부터
+            if arr[j - 1] > arr[j]:
+                arr[j - 1], arr[j] = arr[j], arr[j - 1]
+            else:
+                break
+    return arr

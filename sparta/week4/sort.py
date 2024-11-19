@@ -25,3 +25,27 @@ def insertionsort(arr):
             else:
                 break
     return arr
+
+
+def quicksort(arr, st, end):
+    """
+    i: pivot보다 작은 요소들의 집합의 `경계`를 구하기 위함
+      - pivot보다 작거나 같은 값들
+      - 1회 순회 후 i+1 에 pivot이 위치하게 됨
+    j: pivot과 배열 요소들의 값을 비교하기위해 이동하는 값
+    """
+    if st > end:
+        return
+
+    pivot = arr[end]
+    i = st - 1
+    for j in range(st, end):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    arr[i + 1], arr[end] = arr[end], arr[i + 1]  # pivot <-> i
+
+    quicksort(arr, st, i)  # i+1 : pivot
+    quicksort(arr, i + 2, end)
+
+    return arr

@@ -63,3 +63,5 @@ baekjoon/27160
     dict.get(key, 0) += int(value)
     `dict.get(key, default=None)`
 
+dict(해시테이블) 특성상 초기화가 필요
+딕셔너리에 존재하지 않는 키를 참조하려고 하면 KeyError 발생

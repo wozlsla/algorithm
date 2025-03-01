@@ -1,4 +1,6 @@
-morse = {
+# https://www.acmicpc.net/problem/29701 - 모스 부호
+
+morse_dict = {
     ".-": "A",
     "-...": "B",
     "-.-.": "C",
@@ -43,30 +45,13 @@ morse = {
     ".--.-.": "@",
 }
 
-n = int(input())
-s = input().split()
 
+# N = int(input()) # length
+# morse = input().split()
+morse = ".... . .-.. .-.. ---".split()
+print(morse)
+s = ""
 
-def main(n, s):
-    result = ""
-
-    for i in s.split():
-        result += morse.get(i)
-
-    return result.upper()
-
-
-print(main(n, s))
-
-
-"""
-다른 풀이
-"""
-
-# dict를 이렇게 짤 수도 있다...
-# sgn = ['.-', '-...', '-.-.', '-..', '.', '..-.', ..., '-....-', '.--.-.']
-dic = dict(
-    zip(sgn, [chr(i) for i in range(65, 91)] + list("1234567890") + list(",.?:-@"))
-)
-
-print("".join(dic[i] for i in s))
+for i in morse:
+    s += morse_dict[i]
+print(s)

@@ -1,0 +1,65 @@
+[25.01.07]
+
+programmers/12916
+- 조건 검사 중복 됨.
+- 조건 분리를 명확히 해야 함.
+
+programmers/147355
+- t = list(int(t))
+    TypeError: 'int' object is not iterable
+- t[start:end:step]
+    start: 시작 인덱스 (포함).
+    end: 끝 인덱스 (제외). 여기까지 값을 가져옵니다.
+    step: 건너뛰는 간격.
+- 풀이 차이점
+1: 
+    조건 검사: while 루프와 슬라이싱 길이 검사 사용 - 슬라이싱 길이를 매번 확인해야 함, st/ed 객체를 따로 관리해야 함
+2: 
+    조건 검사: for 루프와 미리 계산된 범위를 사용 - 루프 범위에서 자동으로 문자열 경계를 처리, 종결 조건 명시 불필요
+1번의 경우 조건 확인이 추가로 필요해 약간 비효율적. 2번이 더 간결하고 계산량이 적음.
+
+
+[25.01.08]
+
+programmers/140108
+! 조건 순서
+- 하나를 기준으로 update 하면 됨.
+- 초기 조건 사용, 조건문 위치 고려 필요.
+    다른 풀이와 비교했을 떼, x == not_x 위치 조정하면 불필요한 검사 줄일 수 있었음.
+- queue 를 생각해낸 건 좋았으나, 위에서 꼬여서 중첩 반복문 사용.
+- (+) 이전에 dict로 어케 풀었냐...
+
+
+[25.01.09]
+
+programmers/81301
+!! `if v in dict:` 는 딕셔너리의 키 조회 연산이므로 딕셔너리를 순회하지 않습니다. : HashTable 
+    반복문 방식은 문자열을 한 글자씩 순회하고, 매번 tmp를 검사하므로 연산량이 더 많아질 수 있다.
+! replace
+    str.replace(old, new)는 문자열에서 지정된 old 문자열을 new 문자열로 교체하는 데 최적화된 C 구현
+! dict.get()
+    값이 없어도 keyerror 안남
+- "on" in "one": true
+- "1".isdigit() : ture
+- join() 은 문자열의 리스트만 처리 가능. 숫자 리스트는 처리할 수 X.
+    append, int <-> str 바꾸고바꾸고 하지말고, char += char
+- print(numbers.items())
+    dict_items([('zero', 0), ('one', 1), ('two', 2), ...])
+    type: <class 'dict_items'>
+
+[25.01.10]
+
+programmers/42578
+- 해법에 깔끔하게 접근 잘 했음
+    어디에서 경우의 수가 어떻게 나오는지, 어떤 조건을 만족시켜야 하는지
+- 구현은 정말 다양하게 가능하군... 
+    math.prod(): 반복 가능한 객체의 모든 요소를 곱합 (>= Python 3.8)
+
+[25.01.12]
+
+baekjoon/29701
+baekjoon/27160
+- dict.get() 을 사용할 경우 추가적인 초기화 단계 불필요
+    dict.get(key, 0) += int(value)
+    `dict.get(key, default=None)`
+

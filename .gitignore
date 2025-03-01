@@ -12,3 +12,6 @@ sparta/desc/
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+
+
+tmp/

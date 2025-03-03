@@ -65,3 +65,10 @@ baekjoon/27160
 
 dict(해시테이블) 특성상 초기화가 필요
 딕셔너리에 존재하지 않는 키를 참조하려고 하면 KeyError 발생
+
+[25.03.02]
+baekjoon/31562
+- generator & next vs list comprehension
+- dict(hash table) 조회
+    - key 조회 : O(1)
+    - value 조회 : O(n)

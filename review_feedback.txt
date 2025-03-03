@@ -72,3 +72,9 @@ baekjoon/31562
 - dict(hash table) 조회
     - key 조회 : O(1)
     - value 조회 : O(n)
+
+[25.03.03]
+- Conter.. : 각 원소가 몇 번씩 나오는지 저장된 객체 반환
+- generator 써먹음
+    - dic 생성 -> pop -> 남은거 반환
+- 조건: 중복 이름이 있을 떼 -> 검사

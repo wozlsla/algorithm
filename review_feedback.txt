@@ -74,7 +74,16 @@ baekjoon/31562
     - value 조회 : O(n)
 
 [25.03.03]
+programmers/42576
 - Conter.. : 각 원소가 몇 번씩 나오는지 저장된 객체 반환
 - generator 써먹음
     - dic 생성 -> pop -> 남은거 반환
 - 조건: 중복 이름이 있을 떼 -> 검사
+
+[25.03.05]
+programmers/12906
+- Slicing -> 리스트 생성 (이전 풀이)
+- Queue : pop() 으로 요소를 직접 비교 -> deque로 변환
+- itertools.groupby : 내부적으로 연속된 동일 요소들을 그룹화하여 처리
+    - C 코드로 구현되어 있어서, 그룹핑 작업 자체가 매우 빠르게 수행됨.
+
